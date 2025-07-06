@@ -1,0 +1,28 @@
+<div class="relative w-full h-full">
+  <!-- 文豪画像（絶対配置） -->
+  <img src="<%= asset_path(@bungo.image_path) %>" alt="<%= @bungo.name %>"
+       class="absolute left-[175px] bottom-[273px] h-auto rounded" />
+
+  <!-- 再び読むボタン：画像の下 -->
+  <div class="absolute left-[263px] bottom-[124px]">
+    <%= link_to "再び読む", bungaos_random_path, class: "w-[266px] h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer" %>
+  </div>
+
+  <div class="absolute left-[625px] top-[200px] max-w-2xl">
+    <h2 class="mb-6 text-[#6C2C2F] font-shippori">
+      <span class="text-[32px]">今回の主人公は </span>
+      <span class="text-[36px] font-medium"><%= @bungo.name %>！</span>
+    </h2>
+    <p class="text-[32px] whitespace-pre-wrap text-[#6C2C2F] font-shippori"><%= @bungo.fact.presence&.strip || "準備中です……" %></p>
+  </div>
+
+  <!-- Xで共有ボタン：右下 -->
+  <div class="absolute right-[263px] bottom-[124px]">
+    <button class="w-[266px] h-[61px] rounded-[8px] bg-[#6C2C2F]
+                   flex items-center justify-center
+                   text-white text-[32px] font-shippori font-normal
+                   hover:opacity-90 transition cursor-pointer">
+      Xで共有する
+    </button>
+  </div>
+</div>
