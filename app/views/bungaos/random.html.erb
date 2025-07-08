@@ -1,28 +1,47 @@
-<div class="relative w-full h-full">
-  <!-- 文豪画像（絶対配置） -->
+<div class="relative w-full h-full pt-10 mt-6 sm:mt-0">
+  <!-- 文豪画像 -->
   <img src="<%= asset_path(@bungo.image_path) %>" alt="<%= @bungo.name %>"
-       class="absolute left-[175px] bottom-[273px] h-auto rounded" />
+    class="
+      sm:absolute sm:left-[175px] sm:bottom-[273px] sm:h-[382px]
+      relative mx-auto my-6 h-[177px] rounded object-contain
+    " />
 
-  <!-- 再び読むボタン：画像の下 -->
-  <div class="absolute left-[263px] bottom-[124px]">
-    <%= link_to "再び読む", bungaos_random_path, class: "w-[266px] h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer" %>
-  </div>
-
-  <div class="absolute left-[625px] top-[200px] max-w-2xl">
-    <h2 class="mb-6 text-[#6C2C2F] font-shippori">
-      <span class="text-[32px]">今回の主人公は </span>
-      <span class="text-[36px] font-medium"><%= @bungo.name %>！</span>
+  <!-- テキスト -->
+  <div
+    class="
+      sm:absolute sm:left-[625px] sm:top-[150px] sm:max-w-2xl
+      relative text-center sm:text-left px-4 mx-auto my-4 max-w-[280px]
+      text-[#6C2C2F] font-shippori
+    ">
+    <h2 class="mb-6 text-[16px] sm:text-[32px]">
+      今回の主人公は
+      <span class="font-medium text-[20px] sm:text-[36px]"><%= @bungo.name %>！</span>
     </h2>
-    <p class="text-[32px] whitespace-pre-wrap text-[#6C2C2F] font-shippori"><%= @bungo.fact.presence&.strip || "準備中です……" %></p>
+    <p class="text-[16px] sm:text-[32px] whitespace-pre-wrap"><%= @bungo.fact.presence&.strip %></p>
   </div>
 
-  <!-- Xで共有ボタン：右下 -->
-  <div class="absolute right-[263px] bottom-[124px]">
-    <button class="w-[266px] h-[61px] rounded-[8px] bg-[#6C2C2F]
-                   flex items-center justify-center
-                   text-white text-[32px] font-shippori font-normal
-                   hover:opacity-90 transition cursor-pointer">
-      Xで共有する
-    </button>
+  <!-- 再び読むボタン -->
+  <div
+    class="
+      sm:absolute sm:left-[263px] sm:bottom-[150px]
+      relative mx-auto mt-[35px] sm:mt-0
+      w-[200px] sm:w-[266px]
+    ">
+    <%= link_to "再び読む", bungaos_random_path,
+      class: "h-[40px] sm:h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[18px] sm:text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer w-full" %>
+  </div>
+
+  <!-- Xで共有するボタン -->
+  <div
+    class="
+      sm:absolute sm:right-[263px] sm:bottom-[150px]
+      relative mx-auto mt-[15px] sm:mt-0
+      w-[200px] sm:w-[266px]
+    ">
+    <%= link_to "Xで共有する",
+      "https://twitter.com/intent/tweet?text=#{CGI.escape('文学豆知識をチェック！')}&url=#{CGI.escape(request.original_url)}&hashtags=#{CGI.escape('文豪豆知識')}",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      class: "h-[40px] sm:h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[18px] sm:text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer w-full" %>
   </div>
 </div>
