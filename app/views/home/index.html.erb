@@ -11,9 +11,17 @@
     文豪豆知識
   </h1>
 
-  <!-- 読むボタン -->
-  <div class="mt-[100px] sm:mt-[140px] md:mt-[160px] lg:mt-[180px] mb-10 w-full max-w-[1440px] flex justify-center">
-    <%= link_to "読む", bungaos_random_path,
-      class: "w-[200px] h-[48px] sm:w-[266px] sm:h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[20px] sm:text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer" %>
-  </div>
+  <style>
+  /* スマホサイズのみ（640px未満）に適用 */
+  @media (max-width: 639px) {
+    .mt-mobile-adjust {
+      margin-top: 340px !important;
+    }
+  }
+</style>
+
+  <!-- ボタン -->
+<div class="mt-[100px] sm:mt-[140px] md:mt-[160px] lg:mt-[180px] mt-mobile-adjust mb-10 w-full max-w-[1440px] flex justify-center">
+  <%= link_to "読む", bungaos_random_path,
+    class: "w-[200px] h-[48px] sm:w-[266px] sm:h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[20px] sm:text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer" %>
 </div>

@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-  # 文豪のデータ
+# 文豪のデータ
 Bungo.create!([
   {
     name: "芥川龍之介",
