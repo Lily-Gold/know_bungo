@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title><%= content_for(:title) || "文豪豆知識" %></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for(:title) || "文豪豆知識" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- PWA対応 -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
+    <!-- PWA対応 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/icon.png" type="image/png">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
 
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
-  <!-- Twitterカード -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="<%= image_url('pc/ogp.png') %>" />
-  <meta property="og:title" content="文学豆知識" />
-  <meta property="og:description" content="これであなたも文豪マスター！" />
-  <meta property="og:image" content="<%= image_url('pc/ogp.png') %>" />
-  <meta property="og:url" content="<%= root_url %>" />
-  <meta property="og:type" content="website" />
-</head>
+    <!-- Twitterカード -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="<%= image_url('pc/ogp.png') %>" />
+    <meta property="og:title" content="文学豆知識" />
+    <meta property="og:description" content="これであなたも文豪マスター！" />
+    <meta property="og:image" content="<%= image_url('pc/ogp.png') %>" />
+    <meta property="og:url" content="<%= root_url %>" />
+    <meta property="og:type" content="website" />
+  </head>
 
-  <body class="overflow-hidden m-0 p-0">
-  <!-- 背景 -->
-    <div class="bg-[#EADCC3] w-screen h-screen relative overflow-hidden">
-    <!-- 外枠 -->
-      <div class="absolute top-[36px] left-[35px] right-[35px] bottom-[36px] border border-[#985920]"></div>
-      <div class="absolute top-[46px] left-[45px] right-[45px] bottom-[46px] border border-[#985920]"></div>
-      <div class="absolute top-[56px] left-[55px] right-[55px] bottom-[56px] border border-[#985920]"></div>
-      <div class="absolute top-[66px] left-[65px] right-[65px] bottom-[66px] border border-[#985920]"></div>
-
-      <%= yield %>
+  <body class="bg-[#EADCC3] w-screen min-h-screen relative overflow-auto m-0 p-0">
+    <%= yield %>
 
     <!-- フッター-->
-      <footer class="absolute right-[35px] bottom-[15px] sm:bottom-[10px] text-sm text-[#985920] select-none">
-        © 2025 文豪豆知識
-      </footer>
-  </div>
+    <footer class="absolute right-[35px] bottom-[15px] sm:bottom-[10px] text-sm text-[#985920] select-none">
+      © 2025 文豪豆知識
+    </footer>
   </body>
 </html>

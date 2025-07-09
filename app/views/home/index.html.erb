@@ -1,12 +1,19 @@
-<!-- タイトル -->
-<div class="absolute top-[180px] sm:top-[229px] w-full text-center">
-  <h1 class="text-[36px] sm:text-[64px] text-[#6C2C2F] font-shippori font-medium">
+<!-- 全体ラッパー -->
+<div class="container mx-auto min-h-screen bg-[#EADCC3] px-4 py-10 flex flex-col items-center justify-start">
+  <!-- 外枠（4重） -->
+  <div class="absolute inset-[36px] border border-[#985920] pointer-events-none"></div>
+  <div class="absolute inset-[46px] border border-[#985920] pointer-events-none"></div>
+  <div class="absolute inset-[56px] border border-[#985920] pointer-events-none"></div>
+  <div class="absolute inset-[66px] border border-[#985920] pointer-events-none"></div>
+
+  <!-- タイトル -->
+  <h1 class="text-[32px] sm:text-[48px] md:text-[56px] lg:text-[64px] text-[#6C2C2F] font-shippori font-medium mt-[120px] sm:mt-[160px] md:mt-[180px] lg:mt-[200px] text-center w-full max-w-[1440px]">
     文豪豆知識
   </h1>
-</div>
 
-<!-- ボタン -->
-<div class="absolute top-[60vh] sm:top-[527px] left-1/2 transform -translate-x-1/2">
-  <%= link_to "読む", bungaos_random_path,
-    class: "w-[200px] h-[48px] sm:w-[266px] sm:h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[20px] sm:text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer" %>
+  <!-- 読むボタン -->
+  <div class="mt-[100px] sm:mt-[140px] md:mt-[160px] lg:mt-[180px] mb-10 w-full max-w-[1440px] flex justify-center">
+    <%= link_to "読む", bungaos_random_path,
+      class: "w-[200px] h-[48px] sm:w-[266px] sm:h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[20px] sm:text-[32px] font-shippori font-normal hover:opacity-90 transition cursor-pointer" %>
+  </div>
 </div>
