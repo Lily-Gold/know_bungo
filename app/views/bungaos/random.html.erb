@@ -1,4 +1,4 @@
-<div class="container mx-auto bg-[#EADCC3] px-4 pt-20 sm:pt-[150px] pb-20 sm:pb-[120px] flex flex-col items-center min-h-screen">
+<div class="container mx-auto bg-[#EADCC3] px-4 pt-8 sm:pt-[150px] pb-20 sm:pb-[120px] flex flex-col items-center min-h-screen">
   <% if @bungo.present? %>
     <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-12 sm:gap-24 w-full">
       <!-- 文豪画像 -->
@@ -21,7 +21,7 @@
   <% end %>
 
   <!-- ボタンエリア -->
-  <div class="flex flex-col sm:flex-row items-center justify-center mt-12 sm:mt-16 gap-10 sm:gap-32 mb-16">
+  <div class="flex flex-col sm:flex-row items-center justify-center mt-12 sm:mt-16 gap-6 sm:gap-32 mb-16">
     <%= link_to "再び読む", bungaos_random_path,
       class: "w-[200px] h-[48px] sm:w-[266px] sm:h-[61px] rounded-[8px] bg-[#6C2C2F] flex items-center justify-center text-white text-[18px] sm:text-[32px] font-shippori font-normal hover:opacity-90 transition" %>
 
